@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=5.0">
+      <meta property="og:locale" content="es_ES" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="FixYourPc &#8212; Keep clean your Personal Computer" />
+      <meta property="og:description" content="Do you have a problem in your computer, download FixYourPc and fix it!" />
+      <meta property="og:url" content="fixyourpc" />
+      <meta property="og:site_name" content="FixYourPc" />
+      <link rel="shortcut icon" href="./imgs/logo.png">
+      <title>FixYourPc</title>
+      <style>
+         /* Estilos para el botón de menú */
+         .menu-btn {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 30px;
+          height: 20px;
+          cursor: pointer;
+          margin-top: 40px;
+          margin-left: 20px;
+          margin-right: 20px;
+          margin-bottom: 20px;
+         }
+         .menu-btn div {
+          width: 100%;
+          height: 3px;
+          background-color: #333; /* Color de las rayas */
+         }
+         /* Estilos para el menú desplegable */
+         .menu {
+         display: none;
+         position: absolute;
+         top: 50px; /* Ajusta la posición vertical del menú */
+         left: 20px; /* Ajusta la posición horizontal del menú */
+         background-color: rgb(255, 255, 255); /* Color de fondo del menú */
+         padding: 10px;
+         border-radius: 10px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         }
+         .menu.active {
+         display: block;
+         }
+         /* Estilos para los enlaces del menú */
+         .menu a {
+         display: block;
+         padding: 30px;
+         text-decoration: none;      
+         color: #333; /* Color del texto de los enlaces */
+         }
+         body {
+         font-family: Arial, sans-serif;
+         background-color: #f0f0f0;
+         margin: 0;
+         padding: 0;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         }
+         p {
+          margin: 0;
+         }
+         .container {
+         background-color: #ffffff;
+         padding: 20px;
+         border-radius: 20px;
+         text-align: center;
+         }
+         .container12345 {
+         background-image: url('./imgs/IMG_0239.jpg');
+         background-size: cover;
+         background-position: center;
+         padding: 20px;
+         border-radius: 20px;
+         text-align: center;
+         }
+         .cursoscontainer {
+         background-color: #ffffff;
+         border-radius: 20px;
+         text-align: center;
+         width: 60%;
+         height: auto;
+         }
+         .option {
+         display: inline-block;
+         margin: 20px;
+         padding: 20px;
+         border-radius: 20px;
+         text-decoration: none;
+         color: #ffffff;
+         font-size: 20px;
+         transition: all 0.3s ease;
+         position: relative;
+         overflow: hidden;
+         }
+         .option img {
+         width: 100%;
+         height: auto;
+         border-radius: 20px;
+         position: absolute;
+         top: 0;
+         left: 0;
+         transition: opacity 0.3s ease;
+         }
+         .option:hover img {
+         opacity: 0.8;
+         }
+         .option-text {
+         position: relative;
+         z-index: 1;
+         background-color: #ffffffb4;
+         }
+         .option-text1 {
+         position: relative;
+         z-index: 1;
+         }
+         .option-text2 {
+         position: relative;
+         z-index: 1;
+         }
+         .ciencia { background-color: #6ab7ff00;}
+         .letras { background-color: #cecece71; }
+         .otro { background-color: #a6ff90; }
+         .option:hover { transform: scale(1.1); }
+         .curso1 { background-color: #bebebe;}
+         .divfinaldepagina { background-color: #2e2e2e; } 
+
+        /* Estilo del botón */
+        .dropbtn {
+          background-color: #3498db;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
+
+          /* Contenedor del desplegable */
+          .dropdown {
+            position: relative;
+            display: inline-block;
+          }
+
+          /* Contenido del desplegable (oculto por defecto) */
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+
+          /* Enlaces del desplegable */
+          .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+
+          /* Cambiar color de fondo en hover */
+          .dropdown-content a:hover {
+            background-color: #f1f1f1;
+          }
+
+          /* Mostrar el desplegable cuando se hace clic en el botón */
+          .dropdown.show {
+            display: block;
+          }
+
+          .barra-de-arriba {
+            display: flex;
+            justify-content: space-between;
+          }
+          
+          .logoinicial {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+          }
+          .content1 {
+            background-image: url('./imgs/fondo.png');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+          }
+          .videocurso {
+            background-color: #f1f1f1;
+            width: 20%;
+            height: 300px;
+          }
+          .divinfo {
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            width: 20%;  
+            height: 800px; /* Altura fija */
+            overflow-y: scroll; /* Permitir desplazamiento vertical */
+            padding: 12px 764px;
+            background-color: white;
+            background-image: url("./imgs/IMG_0239.jpg");
+          }
+
+          .text-styling {
+            color: rgb(107, 107, 107);
+            font-size: 20px;
+          }
+          .text-styling2 {
+            color: rgb(172, 172, 172);
+            font-size: 18px;
+          }
+          .text-styling3 {
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            font-weight: bold;
+    }
+          
+
+          
+
+
+      </style>
+
+
+
+
+
+
+   </head>
+   <body>
+    <div class="barra-de-arriba">
+      <center>
+        
+      <div class="logoinicial">
+      <p align="center">
+        
+          <a href="index.html" class="option ciencia">
+            <img src="./imgs/logo.png" alt="Ciencia">
+            <span class="option-text"></span>
+            </a>
+      </p>
+    </center>
+    </div>
+
+    </div>
+
+
+    <div class="cosas123">
+        <div class="divinfo">
+            <center>
+            <h1 style="text-align: center;"><span style="color: #1717c0; font-family: verdana;">FIXYOURPC</span></h1>
+            <h4 class="text-styling3"><span style="color: #000000; font-family: verdana; font-size: 18px;"><i>FIXYOURPC is the hub containing everything you need to keep your PC always up-to-date, including repair programmes installed on a Windows 10 portable operating system.</span></i></h4>
+            <h4 class="text-styling3"><span style="color: #000000; font-family: verdana; font-size: 18px;"><i>It will also help you run hygiene and performance tests in your PC components regularly.</h4>
+            <h1></h1>
+            <h5><font color="grey">Screenshot:</h5></font></h5>
+            <img src="./imgs/Screenshot.png">
+            
+            <h3>‎ </h3>
+            <a href="https://drive.google.com/drive/folders/13xw1kPGsLjsIh7E7wTRqx82n3mGmG_24?usp=sharing">
+                <img src="./imgs/google_drive.png">
+            </a>
+            
+            <h3>‎ </h3>
+            <p class="text-styling"><b>Contact:</b></p>
+            <p class="text-styling2"><b><a href="mailto:contact.fixyourpc@gmail.com">contact.fixyourpc@gmail.com</a></b></p>
+            <h3>‎ </h3>
+            <p class="text-styling"><b>Video</b></p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/s-i7NqeVg7w?si=SpkY8G9Efc-j9sUr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </center>
+        </div>
+
+
+
+
+    </div>
+
+  </body>
+
+
+
+
+
+
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('myMenu');
+            menu.classList.toggle('active');
+        }
+        function toggleDropdown() {
+          var dropdown = document.getElementById("myDropdown");
+          dropdown.classList.toggle("show");
+        }
+        function mostrarContenido(id) {
+  var contenido = document.getElementById(id);
+  if (contenido.style.display === "none") {
+    contenido.style.display = "block";
+  } else {
+    contenido.style.display = "none";
+  }
+}
+
+    </script>
+
+    <script src="script.js"></script>
+   
+
+
+</html>
